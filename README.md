@@ -38,3 +38,5 @@ In general batch applications which perform input and output of data from file a
 * In Tasket model: ItemReader/ItemProcessor/ItemWriter substitutes a single Tasklet interface implementation.
 
 * JobRepository: A system to manage condition of Job and Step. The management information is persisted on the database based on the table schema specified by Spring Batch.
+
+* Event Listener: Used to define which Job is in progress, what jobs have failed and if the jobs have been completed. Types of event listeners: JobExecutionListener (before and after job),StepExecutionListener (before and after step),ChunkListener,ItemReadListener,ItemProcessListener,ItemWriteListener,SkipListener.
