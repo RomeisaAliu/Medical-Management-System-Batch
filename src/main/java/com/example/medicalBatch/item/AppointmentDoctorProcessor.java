@@ -30,12 +30,14 @@ public class AppointmentDoctorProcessor implements ItemProcessor<User, MimeMessa
                 doctorId, currentDateTime, next24HoursDateTime
         );
 
+
         MimeMessagePreparator preparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setTo(doctor.getEmail());
             messageHelper.setSubject("Appointments for " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
             messageHelper.setText(getEmailContent(appointments, doctor.getFullName()), true);
         };
+
 
         return preparator;
     }
