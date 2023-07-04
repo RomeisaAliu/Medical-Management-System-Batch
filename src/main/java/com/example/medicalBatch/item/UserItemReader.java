@@ -11,6 +11,10 @@ public class UserItemReader implements ItemReader<User> {
 
     private List<User> users;
 
+    public UserItemReader(List<User> users) {
+        this.users = users;
+    }
+
     @Override
     public User read() {
         if (!users.isEmpty()) {
